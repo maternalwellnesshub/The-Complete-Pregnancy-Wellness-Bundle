@@ -11,111 +11,171 @@
 :root{--navy:#0d1f3c;--gold:#b8922a;--gl:#d4a94a;--gp:#f5edd6;--cream:#fdfaf4;--text:#1a1a2e;--muted:#5a5a7a;--pink:#c0395a;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:#fff;font-family:'Lato',sans-serif;color:var(--text);font-size:16px;line-height:1.75;}
+
+/* HEADER */
 .hdr{background:var(--navy);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:14px;}
 .logo-frame{width:64px;height:64px;border-radius:50%;background:linear-gradient(145deg,#f0d060,#b8922a,#f5e070,#9a7520,#d4a94a);padding:3px;box-shadow:0 0 18px rgba(212,169,74,.6);flex-shrink:0;}
 .logo-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;border:2px solid rgba(255,215,0,.3);}
 .logo-inner img{width:100%;height:100%;object-fit:cover;}
 .hdr-text{color:var(--gl);font-family:'Playfair Display',serif;font-size:1.05rem;letter-spacing:.04em;}
 .strip{background:linear-gradient(90deg,var(--navy),#1a3560,var(--navy));border-bottom:2px solid var(--gold);padding:9px;text-align:center;font-size:.72rem;color:var(--gl);letter-spacing:.14em;text-transform:uppercase;font-weight:700;}
-.gdiv{display:flex;align-items:center;gap:10px;margin:24px auto;max-width:320px;}
-.gdiv::before,.gdiv::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.gdiv span{color:var(--gold);font-size:1.1rem;}
+
+/* TOAST */
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy);border:1px solid var(--gold);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:12px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.3);transition:transform .5s cubic-bezier(.34,1.56,.64,1);max-width:340px;width:90%;}
 #toast.show{transform:translateX(-50%) translateY(0);}
 .toast-dot{width:10px;height:10px;background:#4caf50;border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.5);}50%{box-shadow:0 0 0 6px rgba(76,175,80,0);}}
 .toast-text{font-size:.82rem;color:#e0eaff;line-height:1.4;}
 .toast-text strong{color:var(--gl);}
+
+/* LAYOUT */
 .wrap{max-width:780px;margin:0 auto;padding:0 18px;}
-.hl{text-align:center;padding:44px 0 28px;}
-.hl .kick{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
-.hl h1{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,5vw,2.7rem);line-height:1.22;color:var(--navy);font-weight:900;margin-bottom:16px;}
-.hl h1 em{font-style:italic;color:var(--gold);}
-.hl .deck{font-size:1.08rem;color:var(--muted);font-style:italic;max-width:560px;margin:0 auto;}
-.hero{padding:8px 0 32px;text-align:center;}
-.hero img{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 12px 48px rgba(13,31,60,.15);border:1px solid rgba(184,146,42,.2);}
-.prose{padding:8px 0 28px;}
-.prose p{margin-bottom:16px;font-size:1rem;line-height:1.8;}
-.prose .lg{font-size:1.15rem;color:var(--navy);font-style:italic;}
+.gdiv{display:flex;align-items:center;gap:10px;margin:20px auto;max-width:320px;}
+.gdiv::before,.gdiv::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.gdiv span{color:var(--gold);font-size:1.1rem;}
+
+/* FLORAL HERO */
+.floral-hero{position:relative;background:linear-gradient(160deg,#0d1f3c 0%,#162d50 60%,#1a3a28 100%);border-radius:10px;margin:28px 0 8px;overflow:hidden;padding:48px 32px 52px;text-align:center;}
+.floral-hero::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse at 10% 20%, rgba(184,146,42,.18) 0%, transparent 50%),
+  radial-gradient(ellipse at 90% 80%, rgba(184,146,42,.14) 0%, transparent 50%),
+  radial-gradient(ellipse at 50% 100%, rgba(26,58,40,.6) 0%, transparent 60%);pointer-events:none;}
+/* Floral SVG decorations via CSS */
+.floral-hero .fl{position:absolute;opacity:.22;font-size:5rem;line-height:1;pointer-events:none;color:var(--gl);}
+.floral-hero .fl-tl{top:-10px;left:-10px;transform:rotate(-20deg);font-size:7rem;}
+.floral-hero .fl-tr{top:-10px;right:-10px;transform:rotate(20deg) scaleX(-1);font-size:7rem;}
+.floral-hero .fl-bl{bottom:-10px;left:10px;transform:rotate(15deg);font-size:5rem;}
+.floral-hero .fl-br{bottom:-10px;right:10px;transform:rotate(-15deg) scaleX(-1);font-size:5rem;}
+.floral-hero .fl-ml{top:50%;left:4px;transform:translateY(-50%) rotate(5deg);font-size:3.5rem;}
+.floral-hero .fl-mr{top:50%;right:4px;transform:translateY(-50%) rotate(-5deg) scaleX(-1);font-size:3.5rem;}
+.hero-kicker{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:14px;position:relative;}
+.floral-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.5rem);line-height:1.2;color:#fff;font-weight:900;margin-bottom:14px;position:relative;}
+.floral-hero h1 em{font-style:italic;color:var(--gl);}
+.floral-hero .hero-sub{font-size:.98rem;color:rgba(255,255,255,.72);max-width:480px;margin:0 auto 24px;line-height:1.65;position:relative;font-style:italic;}
+.floral-hero .hero-sub em{color:var(--gl);font-style:normal;font-weight:700;}
+/* Gold leaf SVG inline */
+.leaf-row{display:flex;justify-content:center;gap:6px;margin-bottom:22px;opacity:.5;}
+.leaf-row svg{width:28px;height:28px;fill:var(--gl);}
+
+/* EARLY CTA */
+.early-cta{background:linear-gradient(135deg,var(--gp),#fff);border:1px solid rgba(184,146,42,.25);border-radius:10px;padding:24px 28px;text-align:center;margin:20px 0 28px;}
+.early-cta p{font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--navy);font-style:italic;margin-bottom:6px;line-height:1.5;}
+.early-cta .price-line{margin:10px 0 16px;}
+.early-cta .price-line .old{font-size:.9rem;color:var(--muted);text-decoration:line-through;margin-right:8px;}
+.early-cta .price-line .new{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:900;}
+.early-cta .save{font-size:.75rem;color:#5a9a60;font-weight:700;letter-spacing:.06em;display:block;margin-bottom:14px;}
+
+/* PROSE */
+.prose{padding:4px 0 22px;}
+.prose p{margin-bottom:14px;font-size:.98rem;line-height:1.8;}
+.prose .lg{font-size:1.1rem;color:var(--navy);font-style:italic;}
 .prose .bold{font-weight:700;color:var(--navy);}
 .prose .pink{color:var(--pink);font-weight:700;}
-.pq{border-left:4px solid var(--gold);padding:16px 22px;margin:28px 0;background:linear-gradient(90deg,var(--gp),#fff);border-radius:0 6px 6px 0;position:relative;}
-.pq::after{content:'✦';position:absolute;top:12px;right:16px;color:var(--gold);opacity:.4;font-size:1.2rem;}
-.pq p{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.6;margin:0;}
-.sh{text-align:center;margin:40px 0 24px;}
-.sh .lbl{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px;}
-.sh h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,4vw,2rem);color:var(--navy);font-weight:700;line-height:1.28;}
+
+.pq{border-left:4px solid var(--gold);padding:14px 20px;margin:22px 0;background:linear-gradient(90deg,var(--gp),#fff);border-radius:0 6px 6px 0;position:relative;}
+.pq::after{content:'✦';position:absolute;top:10px;right:14px;color:var(--gold);opacity:.4;font-size:1.1rem;}
+.pq p{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--navy);line-height:1.6;margin:0;}
+
+/* SECTION HEADINGS */
+.sh{text-align:center;margin:32px 0 20px;}
+.sh .lbl{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.sh h2{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,4vw,1.9rem);color:var(--navy);font-weight:700;line-height:1.28;}
 .sh h2 em{font-style:italic;color:var(--gold);}
-.scope-box{background:linear-gradient(135deg,var(--cream),#fff);border:1px solid rgba(184,146,42,.2);border-radius:8px;padding:18px 22px;margin:0 0 20px;font-size:.91rem;color:var(--muted);line-height:1.72;}
-.scope-box strong{display:block;color:var(--navy);font-size:.95rem;margin-bottom:6px;}
-.bi{background:linear-gradient(135deg,var(--navy),#162d50);color:var(--gl);padding:22px 26px;border-radius:8px;text-align:center;margin:32px 0 24px;border:1px solid rgba(212,169,74,.3);position:relative;overflow:hidden;}
+
+/* MOCKUP SECTION */
+.mockup-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0 32px;align-items:start;}
+@media(max-width:540px){.mockup-grid{grid-template-columns:1fr;}}
+.mockup-card{border-radius:10px;overflow:hidden;border:1px solid rgba(184,146,42,.2);box-shadow:0 6px 24px rgba(13,31,60,.1);}
+.mockup-card img{width:100%;height:auto;display:block;}
+.mockup-caption{background:linear-gradient(135deg,var(--navy),#162d50);padding:14px 16px;text-align:center;}
+.mockup-caption .mc-icon{font-size:1.3rem;margin-bottom:4px;}
+.mockup-caption strong{display:block;color:var(--gl);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;}
+.mockup-caption p{color:rgba(255,255,255,.65);font-size:.76rem;line-height:1.45;}
+
+/* SCOPE BOX */
+.scope-box{background:linear-gradient(135deg,var(--cream),#fff);border:1px solid rgba(184,146,42,.2);border-radius:8px;padding:16px 20px;margin:0 0 18px;font-size:.9rem;color:var(--muted);line-height:1.7;}
+.scope-box strong{display:block;color:var(--navy);font-size:.93rem;margin-bottom:5px;}
+
+/* BUNDLE INTRO */
+.bi{background:linear-gradient(135deg,var(--navy),#162d50);color:var(--gl);padding:20px 24px;border-radius:8px;text-align:center;margin:28px 0 20px;border:1px solid rgba(212,169,74,.3);position:relative;overflow:hidden;}
 .bi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.bi strong{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gp);margin-bottom:8px;font-weight:700;}
-.bi p{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;}
-.bc{display:flex;gap:20px;align-items:flex-start;margin-bottom:32px;padding:20px;border-radius:8px;background:linear-gradient(135deg,#fff,var(--cream));border:1px solid rgba(184,146,42,.15);box-shadow:0 2px 12px rgba(13,31,60,.05);}
-.bc .bi2{flex:0 0 150px;max-width:150px;}
-.bc .bi2 img{width:100%;height:auto;border-radius:4px;box-shadow:0 6px 20px rgba(13,31,60,.18);display:block;}
-.bc .binfo{flex:1;padding-top:4px;}
-.bc .bnum{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px;}
-.bc .btitle{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-weight:700;line-height:1.3;margin-bottom:8px;}
-.bc .bdesc{font-size:.91rem;color:var(--muted);line-height:1.7;margin-bottom:10px;}
-.bc .bprice{font-size:.82rem;color:var(--muted);margin-bottom:10px;}
+.bi strong{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gp);margin-bottom:7px;font-weight:700;}
+.bi p{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;}
+
+/* BOOK CARDS */
+.bc{display:flex;gap:18px;align-items:flex-start;margin-bottom:20px;padding:18px;border-radius:8px;background:linear-gradient(135deg,#fff,var(--cream));border:1px solid rgba(184,146,42,.15);box-shadow:0 2px 10px rgba(13,31,60,.05);}
+.bc .bi2{flex:0 0 120px;max-width:120px;}
+.bc .bi2 img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 5px 16px rgba(13,31,60,.18);}
+.bc .binfo{flex:1;padding-top:2px;}
+.bc .bnum{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:3px;}
+.bc .btitle{font-family:'Playfair Display',serif;font-size:.98rem;color:var(--navy);font-weight:700;line-height:1.3;margin-bottom:7px;}
+.bc .bdesc{font-size:.86rem;color:var(--muted);line-height:1.65;margin-bottom:8px;}
+.bc .bprice{font-size:.78rem;color:var(--muted);margin-bottom:8px;}
 .bc .bprice strong{color:var(--navy);font-weight:700;}
-.bc .btags{display:flex;flex-wrap:wrap;gap:5px;}
-.bc .btags span{background:var(--gp);color:var(--navy);font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;border:1px solid rgba(184,146,42,.3);}
-@media(max-width:520px){.bc{flex-direction:column;}.bc .bi2{flex:unset;max-width:150px;margin:0 auto;}.bc .binfo{text-align:center;}.bc .btags{justify-content:center;}}
-.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.bc .btags{display:flex;flex-wrap:wrap;gap:4px;}
+.bc .btags span{background:var(--gp);color:var(--navy);font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:20px;border:1px solid rgba(184,146,42,.3);}
+@media(max-width:520px){.bc{flex-direction:column;}.bc .bi2{flex:unset;max-width:130px;margin:0 auto;}.bc .binfo{text-align:center;}.bc .btags{justify-content:center;}}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0;}
 @media(max-width:520px){.tgrid{grid-template-columns:1fr;}}
-.tc{background:var(--cream);border:1px solid rgba(184,146,42,.2);border-radius:8px;padding:18px;position:relative;}
-.tc::before{content:'\201C';font-family:'Playfair Display',serif;font-size:3rem;color:var(--gl);opacity:.3;position:absolute;top:6px;left:12px;line-height:1;}
-.tc .tt{font-size:.9rem;color:var(--text);line-height:1.68;margin-bottom:12px;padding-top:8px;}
-.tc .ta{font-size:.74rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
-.tc .td{font-size:.7rem;color:var(--muted);margin-top:2px;}
-.stars{color:var(--gold);font-size:.8rem;margin-bottom:5px;}
-.spbar{background:linear-gradient(135deg,var(--gp),#fff,var(--gp));border:1px solid rgba(184,146,42,.25);border-radius:8px;padding:20px;margin:28px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;position:relative;}
+.tc{background:var(--cream);border:1px solid rgba(184,146,42,.2);border-radius:8px;padding:16px;position:relative;}
+.tc::before{content:'\201C';font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--gl);opacity:.3;position:absolute;top:4px;left:10px;line-height:1;}
+.tc .tt{font-size:.86rem;color:var(--text);line-height:1.65;margin-bottom:10px;padding-top:8px;}
+.tc .ta{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
+.tc .td{font-size:.68rem;color:var(--muted);margin-top:2px;}
+.stars{color:var(--gold);font-size:.76rem;margin-bottom:4px;}
+
+/* STATS BAR */
+.spbar{background:linear-gradient(135deg,var(--gp),#fff,var(--gp));border:1px solid rgba(184,146,42,.25);border-radius:8px;padding:18px;margin:22px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;position:relative;}
 .spbar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:8px 8px 0 0;}
-.spn{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:3px;}
-.spl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;}
-@media(max-width:440px){.spbar{grid-template-columns:1fr;}}
-.bundle-img{text-align:center;margin:0 0 24px;}
+.spn{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:2px;}
+.spl{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+
+/* BUNDLE SHOWCASE IMAGE */
+.bundle-img{text-align:center;margin:0 0 22px;}
 .bundle-img img{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 12px 48px rgba(13,31,60,.15);border:1px solid rgba(184,146,42,.2);}
-.pb{background:linear-gradient(160deg,var(--navy) 0%,#0a1828 100%);border-radius:10px;padding:36px 28px;text-align:center;margin:36px 0 24px;position:relative;overflow:hidden;border:1px solid rgba(212,169,74,.3);box-shadow:0 20px 60px rgba(13,31,60,.3);}
+
+/* PRICING BOX */
+.pb{background:linear-gradient(160deg,var(--navy) 0%,#0a1828 100%);border-radius:10px;padding:32px 24px;text-align:center;margin:28px 0 22px;position:relative;overflow:hidden;border:1px solid rgba(212,169,74,.3);box-shadow:0 20px 60px rgba(13,31,60,.3);}
 .pb::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),#f0d060,var(--gl),#f0d060,var(--gold));}
-.pb .gold-ornament{color:rgba(212,169,74,.3);font-size:1.4rem;letter-spacing:.5em;margin-bottom:12px;}
-.plbl{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:14px;}
-.ptitle{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.2rem,3.5vw,1.6rem);font-weight:700;margin-bottom:20px;line-height:1.3;}
-.wg{list-style:none;margin:0 0 22px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto;}
-.wg li{display:flex;align-items:flex-start;gap:8px;color:#c8d8f0;font-size:.9rem;margin-bottom:8px;line-height:1.5;}
-.wg li::before{content:'✦';color:var(--gl);flex-shrink:0;font-size:.62rem;margin-top:4px;}
-.value-breakdown{background:rgba(255,255,255,.05);border:1px solid rgba(212,169,74,.2);border-radius:6px;padding:14px 18px;max-width:380px;margin:0 auto 20px;}
-.vb-row{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:#8899bb;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06);}
-.vb-row.total{color:var(--gl);font-weight:700;font-size:.9rem;padding-top:8px;margin-top:4px;border-top:1px solid rgba(212,169,74,.3);border-bottom:none;}
-.pold{font-size:1rem;color:#6677aa;text-decoration:line-through;margin-bottom:4px;}
-.pnew{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,8vw,3.6rem);color:var(--gl);font-weight:900;line-height:1;margin-bottom:4px;}
-.psaving{display:inline-block;background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);color:#7ddc81;font-size:.75rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-bottom:18px;letter-spacing:.06em;}
-.pnote{font-size:.78rem;color:#6677aa;margin-bottom:24px;}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#e8c050,var(--gl));color:var(--navy);font-family:'Lato',sans-serif;font-weight:900;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;padding:16px 40px;border-radius:5px;text-decoration:none;box-shadow:0 6px 24px rgba(184,146,42,.45);transition:transform .2s,box-shadow .2s;}
+.pb .gold-ornament{color:rgba(212,169,74,.3);font-size:1.3rem;letter-spacing:.5em;margin-bottom:10px;}
+.plbl{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);font-weight:700;margin-bottom:12px;}
+.ptitle{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:700;margin-bottom:18px;line-height:1.3;}
+.wg{list-style:none;margin:0 0 18px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto;}
+.wg li{display:flex;align-items:flex-start;gap:7px;color:#c8d8f0;font-size:.86rem;margin-bottom:7px;line-height:1.5;}
+.wg li::before{content:'✦';color:var(--gl);flex-shrink:0;font-size:.58rem;margin-top:4px;}
+.value-breakdown{background:rgba(255,255,255,.05);border:1px solid rgba(212,169,74,.2);border-radius:6px;padding:12px 16px;max-width:360px;margin:0 auto 18px;}
+.vb-row{display:flex;justify-content:space-between;font-size:.79rem;color:#8899bb;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.vb-row.total{color:var(--gl);font-weight:700;font-size:.86rem;padding-top:7px;margin-top:3px;border-top:1px solid rgba(212,169,74,.3);border-bottom:none;}
+.pold{font-size:.95rem;color:#6677aa;text-decoration:line-through;margin-bottom:3px;}
+.pnew{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,8vw,3.4rem);color:var(--gl);font-weight:900;line-height:1;margin-bottom:3px;}
+.psaving{display:inline-block;background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);color:#7ddc81;font-size:.72rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-bottom:16px;letter-spacing:.06em;}
+.pnote{font-size:.75rem;color:#6677aa;margin-bottom:22px;}
+
+/* BUTTONS */
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#e8c050,var(--gl));color:var(--navy);font-family:'Lato',sans-serif;font-weight:900;font-size:.98rem;letter-spacing:.05em;text-transform:uppercase;padding:15px 38px;border-radius:5px;text-decoration:none;box-shadow:0 6px 24px rgba(184,146,42,.45);transition:transform .2s,box-shadow .2s;}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(184,146,42,.55);}
 .btn.dk{background:linear-gradient(135deg,#162d50,var(--navy));color:var(--gl);box-shadow:0 6px 22px rgba(13,31,60,.4);border:1px solid rgba(212,169,74,.3);}
-.csub{font-size:.73rem;color:#5566aa;margin-top:10px;}
-.conf{border:1px solid rgba(184,146,42,.2);border-radius:8px;padding:24px;margin:28px 0;text-align:center;background:linear-gradient(135deg,var(--cream),#fff);}
-.conf h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.15rem;margin-bottom:10px;font-weight:700;}
-.conf p{font-size:.91rem;color:var(--muted);line-height:1.72;max-width:520px;margin:0 auto;}
-.twobox{background:var(--cream);border-radius:8px;padding:26px;margin:30px 0;border:1px solid rgba(184,146,42,.15);}
-.twobox h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.12rem;font-weight:700;margin-bottom:16px;text-align:center;}
-.twogrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.csub{font-size:.7rem;color:#5566aa;margin-top:8px;}
+
+/* TWO CHOICE */
+.twobox{background:var(--cream);border-radius:8px;padding:22px;margin:24px 0;border:1px solid rgba(184,146,42,.15);}
+.twobox h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.08rem;font-weight:700;margin-bottom:14px;text-align:center;}
+.twogrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @media(max-width:440px){.twogrid{grid-template-columns:1fr;}}
-.col{border-radius:6px;padding:16px;}
+.col{border-radius:6px;padding:14px;}
 .col.bad{border:1px solid #f0c0b0;background:#fff8f6;}
 .col.good{border:1px solid var(--gold);background:var(--gp);}
-.clbl{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+.clbl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
 .col.bad .clbl{color:#c05040;}
 .col.good .clbl{color:var(--gold);}
 .col ul{list-style:none;}
-.col ul li{font-size:.85rem;line-height:1.56;margin-bottom:5px;padding-left:18px;position:relative;}
-.col.bad ul li::before{content:'✕';position:absolute;left:0;color:#c05040;font-weight:700;font-size:.7rem;}
-.col.good ul li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:.74rem;}
-footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-size:.74rem;letter-spacing:.05em;margin-top:56px;border-top:2px solid var(--gold);}
+.col ul li{font-size:.82rem;line-height:1.5;margin-bottom:5px;padding-left:16px;position:relative;}
+.col.bad ul li::before{content:'✕';position:absolute;left:0;color:#c05040;font-weight:700;font-size:.68rem;}
+.col.good ul li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:.72rem;}
+
+footer{background:var(--navy);color:#4455aa;text-align:center;padding:18px;font-size:.72rem;letter-spacing:.05em;margin-top:48px;border-top:2px solid var(--gold);}
 </style>
 </head>
 <body>
@@ -133,46 +193,90 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
   </div>
   <span class="hdr-text">Maternal Wellness Hub</span>
 </header>
-<div class="strip">✦ &nbsp; Wellness Editorial &nbsp;·&nbsp; Pregnancy Health &nbsp;·&nbsp; Support. Nourish. Thrive. &nbsp; ✦</div>
+<div class="strip">✦ &nbsp; Support. Nourish. Thrive. &nbsp; ✦ &nbsp; Before · During · After Pregnancy &nbsp; ✦</div>
 
 <main class="wrap">
 
-  <div class="hl">
-    <p class="kick">✦ A Wellness Resource for Before, During &amp; After Pregnancy ✦</p>
-    <h1>Before Pregnancy. During Pregnancy. After Pregnancy.<br><em>Your Wellness, Finally Covered.</em></h1>
-    <p class="deck">Five essential guides. One complete system. Everything you need to feel informed, supported, and confident through the three phases that matter most — before pregnancy, during pregnancy, and after.</p>
+  <!-- ═══ FLORAL HERO ═══ -->
+  <div class="floral-hero">
+    <!-- Decorative floral elements using botanical emoji rendered as gold overlays -->
+    <div class="fl fl-tl">🌿</div>
+    <div class="fl fl-tr">🌿</div>
+    <div class="fl fl-bl">🌸</div>
+    <div class="fl fl-br">🌸</div>
+    <div class="fl fl-ml">🍃</div>
+    <div class="fl fl-mr">🍃</div>
+
+    <p class="hero-kicker">✦ The Complete Pregnancy Wellness Bundle ✦</p>
+
+    <!-- Gold leaf row -->
+    <div class="leaf-row">
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2 6-4 9 1 9 1-1.78-1.73-4.73-2-6.5-2.4z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2 6-4 9 1 9 1-1.78-1.73-4.73-2-6.5-2.4z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2 6-4 9 1 9 1-1.78-1.73-4.73-2-6.5-2.4z" transform="scale(-1,1) translate(-24,0)"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2 6-4 9 1 9 1-1.78-1.73-4.73-2-6.5-2.4z" transform="scale(-1,1) translate(-24,0)"/></svg>
+    </div>
+
+    <h1>What if the answers you've been<br>searching for <em>finally found you?</em></h1>
+    <p class="hero-sub">Five guides. One complete system. Built for the woman who is done guessing and ready to feel <em>informed, supported, and seen</em> — before pregnancy, during it, and long after.</p>
   </div>
 
   <div class="gdiv"><span>✦</span></div>
 
-  <section class="hero">
-    <img src="images/bundle.webp" alt="The Complete Pregnancy Wellness Bundle — 5 Powerful Guides" loading="eager">
-  </section>
-
+  <!-- ═══ STORY ═══ -->
   <section class="prose">
     <p class="lg">There's a particular kind of quiet exhaustion that comes from searching for answers and finding only more questions.</p>
-    <p>You type your symptoms into a search bar at 11pm. You scroll through forums where every third comment contradicts the one before it. You read an article that leaves you more uncertain than when you started. You close the laptop. You try to sleep. The questions follow you.</p>
-    <p><em>Is this normal? Am I doing the right things? Why does no one talk about this?</em></p>
-    <p>If any of that feels familiar — if you've found yourself navigating pregnancy, preparing for it, or recovering from it without a clear, trustworthy map — then what you're about to read was written with you in mind.</p>
-  </section>
-
-  <div class="pq"><p>"Most pregnancy resources focus on the baby. This one focuses on you — your body before conception, your mind and nutrition during pregnancy, and your recovery and strength after birth. That gap is exactly what this bundle was built to fill."</p></div>
-
-  <section class="prose">
-    <p class="bold">Let's talk about what the journey actually looks like.</p>
-    <p>There's the trying-to-conceive stage — when your body feels like a mystery, and every article about "boosting fertility naturally" either oversimplifies or overwhelms. Hormones, cycles, nutrition, stress: all connected, rarely explained together.</p>
-    <p>Then there's pregnancy itself. The changes come fast. Your body shifts in ways you weren't prepared for. Some days you feel wonder. Some days you feel confusion, worry, or a strange sadness that no one warned you about.</p>
-    <p>And after? The postpartum period can feel like standing in unfamiliar territory. The conversations about "bouncing back" feel disconnected from your actual experience.</p>
+    <p>You scroll through forums where every comment contradicts the one before it. You read an article that leaves you more uncertain than when you started. You try to sleep. The questions follow you.</p>
     <p class="pink">None of this is weakness. It's what happens when women don't have access to clear, compassionate, evidence-informed guidance from the very beginning.</p>
   </section>
 
+  <div class="pq"><p>"Most pregnancy resources focus on the baby. This one focuses on you — your body before conception, your mind and nutrition during pregnancy, and your recovery and strength after birth."</p></div>
+
   <div class="gdiv"><span>✦</span></div>
 
-  <div class="sh">
-    <p class="lbl">✦ Introducing the Complete Resource ✦</p>
-    <h2>The Complete <em>Pregnancy Wellness</em> Bundle</h2>
+  <!-- ═══ EARLY CTA — placed after emotional hook ═══ -->
+  <div class="early-cta">
+    <p>5 expertly crafted pregnancy wellness guides — together for less than the cost of one.</p>
+    <div class="price-line">
+      <span class="old">₦25,000</span>
+      <span class="new">₦4,950</span>
+    </div>
+    <span class="save">✦ You save ₦20,050 on this bundle ✦</span>
+    <a href="https://selar.com/7n576566i7" class="btn">Get Instant Access Now →</a>
+    <p class="csub" style="margin-top:10px;">Digital delivery · All 5 guides · Access immediately after purchase</p>
   </div>
 
+  <div class="gdiv"><span>✦</span></div>
+
+  <!-- ═══ MOCKUP SECTION — what you get ═══ -->
+  <div class="sh">
+    <p class="lbl">✦ See What You're Getting ✦</p>
+    <h2>Beautifully Written. <em>Instantly Accessible.</em></h2>
+  </div>
+
+  <div class="mockup-grid">
+    <div class="mockup-card">
+      <img src="images/mockup_read.webp" alt="Sample page from the ebook showing rich formatting" loading="lazy">
+      <div class="mockup-caption">
+        <div class="mc-icon">📖</div>
+        <strong>Expertly Formatted</strong>
+        <p>Rich chapters, clear layouts — designed to read beautifully on any screen.</p>
+      </div>
+    </div>
+    <div class="mockup-card">
+      <img src="images/mockup_download.webp" alt="Download screen showing all 5 PDF guides" loading="lazy">
+      <div class="mockup-caption">
+        <div class="mc-icon">📥</div>
+        <strong>Instant Download</strong>
+        <p>All 5 PDF guides delivered immediately. Yours to keep, read anytime.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gdiv"><span>✦</span></div>
+
+  <!-- ═══ WHAT'S INSIDE ═══ -->
   <div class="scope-box">
     <strong>✦ This bundle is for you.</strong>
     From the moment you start thinking about pregnancy to the days you're finding your way back to yourself after birth — this bundle puts <em>your</em> body, your hormones, your emotions, and your recovery at the centre. Because when <em>you</em> are well, everything else follows.
@@ -180,7 +284,7 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
 
   <div class="bi">
     <strong>✦ Inside This Complete Package ✦</strong>
-    <p>5 focused guides covering your wellness before, during, and after pregnancy — your body, your nutrition, your emotions, and your recovery:</p>
+    <p>5 focused guides covering your wellness before, during, and after pregnancy:</p>
   </div>
 
   <div class="bc">
@@ -188,9 +292,9 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="binfo">
       <p class="bnum">Guide 01</p>
       <h3 class="btitle">The Hidden Secrets to Boosting Fertility Naturally Before Pregnancy</h3>
-      <p class="bdesc">Hormone balance, nutrition timing, lifestyle adjustments, and the often-overlooked factors that make conception feel less like chance and more like preparation.</p>
+      <p class="bdesc">Hormone balance, nutrition timing, and the overlooked factors that make conception feel less like chance and more like preparation.</p>
       <p class="bprice">Individual value: <strong>₦5,000</strong></p>
-      <div class="btags"><span>Natural Solutions</span><span>Hormone Balance</span><span>Pre-Conception</span></div>
+      <div class="btags"><span>Hormone Balance</span><span>Pre-Conception</span></div>
     </div>
   </div>
 
@@ -199,9 +303,9 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="binfo">
       <p class="bnum">Guide 02</p>
       <h3 class="btitle">How to Understand Your Pregnancy Body Changes Without Fear or Confusion</h3>
-      <p class="bdesc">Physical, hormonal, emotional changes — trimester by trimester — so every shift feels like information instead of a cause for panic. Know what's normal. Move through pregnancy with quiet confidence.</p>
+      <p class="bdesc">Trimester by trimester — so every shift feels like information instead of a cause for panic.</p>
       <p class="bprice">Individual value: <strong>₦5,000</strong></p>
-      <div class="btags"><span>Body Awareness</span><span>Trimester Guide</span><span>Emotional Readiness</span></div>
+      <div class="btags"><span>Body Awareness</span><span>Trimester Guide</span></div>
     </div>
   </div>
 
@@ -210,9 +314,9 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="binfo">
       <p class="bnum">Guide 03</p>
       <h3 class="btitle">The Simple Pregnancy Diet Guide: What to Eat to Feel Strong, Not Drained</h3>
-      <p class="bdesc">A clear, realistic framework for eating well during pregnancy. Fuel your body, support your baby's development, and combat fatigue through every trimester — without obsessing over every meal.</p>
+      <p class="bdesc">A clear, realistic framework for eating well during pregnancy — without obsessing over every meal.</p>
       <p class="bprice">Individual value: <strong>₦5,000</strong></p>
-      <div class="btags"><span>Nutritious Foods</span><span>Combat Fatigue</span><span>Healthy Weight</span></div>
+      <div class="btags"><span>Nutrition</span><span>Combat Fatigue</span></div>
     </div>
   </div>
 
@@ -221,9 +325,9 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="binfo">
       <p class="bnum">Guide 04</p>
       <h3 class="btitle">The Secret to Managing Post-Pregnancy Belly Fat Without Stress or Extreme Diets</h3>
-      <p class="bdesc">A gentle, science-backed approach to restoring core strength, improving posture, and supporting metabolism — without punishing diets or high-intensity pressure.</p>
+      <p class="bdesc">Gentle, science-backed recovery — restoring core strength without punishing pressure.</p>
       <p class="bprice">Individual value: <strong>₦5,000</strong></p>
-      <div class="btags"><span>Core Strength</span><span>Natural Recovery</span><span>Metabolism Support</span></div>
+      <div class="btags"><span>Core Strength</span><span>Recovery</span></div>
     </div>
   </div>
 
@@ -232,32 +336,34 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="binfo">
       <p class="bnum">Guide 05</p>
       <h3 class="btitle">How to Calm Pregnancy Mood Swings Without Feeling Out of Control</h3>
-      <p class="bdesc">Understand the emotional patterns of pregnancy and postpartum, manage them with practical tools, and reclaim calm, clarity, and joy — even on the difficult days.</p>
+      <p class="bdesc">Practical tools to reclaim calm, clarity, and joy — even on the difficult days.</p>
       <p class="bprice">Individual value: <strong>₦5,000</strong></p>
-      <div class="btags"><span>Emotional Wellness</span><span>Stress Reduction</span><span>Mental Clarity</span></div>
+      <div class="btags"><span>Emotional Wellness</span><span>Stress Reduction</span></div>
     </div>
   </div>
 
   <div class="gdiv"><span>✦</span></div>
 
+  <!-- ═══ TESTIMONIALS ═══ -->
   <div class="sh">
-    <p class="lbl">✦ From Women Who've Used These Guides ✦</p>
-    <h2>Real Experiences, <em>Real Results</em></h2>
+    <p class="lbl">✦ Real Women. Real Results. ✦</p>
+    <h2>What They're <em>Saying</em></h2>
   </div>
 
   <div class="tgrid">
-    <div class="tc"><div class="stars">★★★★★</div><p class="tt">Having everything in one place — clearly written and easy to follow — made such a difference. I finally felt like I actually knew what I was doing.</p><p class="ta">Adaeze N.</p><p class="td">First-time mother, 32 weeks pregnant</p></div>
-    <div class="tc"><div class="stars">★★★★★</div><p class="tt">The fertility guide alone was worth it. The section on hormone balance was the most practical advice I'd come across. I wish I'd found this sooner.</p><p class="ta">Blessing O.</p><p class="td">Preparing for first pregnancy</p></div>
-    <div class="tc"><div class="stars">★★★★★</div><p class="tt">The mood swings guide helped me during my second trimester. It didn't dismiss what I was feeling — it explained it and gave me real strategies.</p><p class="ta">Chisom A.</p><p class="td">Second trimester, Lagos</p></div>
-    <div class="tc"><div class="stars">★★★★★</div><p class="tt">The belly fat guide helped me approach my recovery without the guilt. Gentle, realistic, and it actually works when you're consistent.</p><p class="ta">Fatima I.</p><p class="td">4 months postpartum</p></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tt">Having everything in one place made such a difference. I finally felt like I knew what I was doing.</p><p class="ta">Adaeze N.</p><p class="td">32 weeks pregnant, Lagos</p></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tt">The fertility guide alone was worth it. The most practical advice I'd come across. I wish I'd found this sooner.</p><p class="ta">Blessing O.</p><p class="td">Preparing for first pregnancy</p></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tt">It didn't dismiss what I was feeling — it explained it and gave me real strategies. I felt truly seen.</p><p class="ta">Chisom A.</p><p class="td">Second trimester</p></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tt">Gentle, realistic, and it actually works. My recovery felt human — not like a punishment.</p><p class="ta">Fatima I.</p><p class="td">4 months postpartum</p></div>
   </div>
 
   <div class="spbar">
-    <div><div class="spn">5</div><div class="spl">Complete Guides</div></div>
-    <div><div class="spn">1</div><div class="spl">Complete System</div></div>
-    <div><div class="spn">100%</div><div class="spl">Evidence-Informed</div></div>
+    <div><div class="spn">5</div><div class="spl">Guides</div></div>
+    <div><div class="spn">3</div><div class="spl">Life Phases</div></div>
+    <div><div class="spn">100%</div><div class="spl">For You</div></div>
   </div>
 
+  <!-- ═══ BUNDLE IMAGE + PRICING ═══ -->
   <div class="bundle-img">
     <img src="images/bundle.webp" alt="The Complete Pregnancy Wellness Bundle" loading="lazy">
   </div>
@@ -267,38 +373,29 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <p class="plbl">✦ Limited Bundle Offer ✦</p>
     <p class="ptitle">All 5 Pregnancy Wellness Guides<br>In One Complete Package</p>
     <ul class="wg">
-      <li>The Hidden Secrets to Boosting Fertility Naturally</li>
-      <li>How to Understand Your Pregnancy Body Changes</li>
+      <li>Boosting Fertility Naturally</li>
+      <li>Understanding Pregnancy Body Changes</li>
       <li>The Simple Pregnancy Diet Guide</li>
-      <li>The Secret to Managing Post-Pregnancy Belly Fat</li>
-      <li>How to Calm Pregnancy Mood Swings</li>
+      <li>Managing Post-Pregnancy Belly Fat</li>
+      <li>Calming Pregnancy Mood Swings</li>
     </ul>
     <div class="value-breakdown">
-      <div class="vb-row"><span>Guide 1 — Fertility Naturally</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 2 — Body Changes</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 3 — Diet Guide</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 4 — Belly Fat</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 5 — Mood Swings</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>Guide 1</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>Guide 2</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>Guide 3</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>Guide 4</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>Guide 5</span><span>₦5,000</span></div>
       <div class="vb-row total"><span>Total Individual Value</span><span>₦25,000</span></div>
     </div>
     <p class="pold">Individual Total: ₦25,000</p>
     <p class="pnew">₦4,950</p>
     <p class="psaving">You save ₦20,050 — bundle offer active</p>
-    <p class="pnote">All 5 resources included. One investment in your health and your future.</p>
+    <p class="pnote">All 5 guides included. One investment in your health and your future.</p>
     <a href="https://selar.com/7n576566i7" class="btn">Get the Complete Bundle Now →</a>
     <p class="csub">Instant access · Digital delivery · Support before, during &amp; after pregnancy</p>
   </div>
 
-  <div style="text-align:center;margin:28px 0;">
-    <p style="font-style:italic;font-size:1.05rem;color:var(--muted);margin-bottom:18px;">You've been searching for the right resource. This is it.</p>
-    <a href="https://selar.com/7n576566i7" class="btn dk">Yes, I Want All 5 Guides →</a>
-  </div>
-
-  <div class="conf">
-    <h3>✦ Created With Care. Trusted by Women Like You. ✦</h3>
-    <p>Every guide was developed with one standard: would a knowledgeable, compassionate health professional be comfortable recommending this? Evidence-informed, practical, and written with deep respect for the real complexity of the maternal journey.</p>
-  </div>
-
+  <!-- ═══ TWO CHOICE CLOSE ═══ -->
   <div class="twobox">
     <h3>Two Paths Forward</h3>
     <div class="twogrid">
@@ -306,9 +403,8 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
         <p class="clbl">Without This Bundle</p>
         <ul>
           <li>Scattered, conflicting information</li>
-          <li>Unsure what's normal and what's not</li>
+          <li>Unsure what's normal</li>
           <li>No clear nutritional plan</li>
-          <li>Managing emotions without guidance</li>
           <li>Postpartum recovery without structure</li>
         </ul>
       </div>
@@ -316,25 +412,18 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
         <p class="clbl">With This Bundle</p>
         <ul>
           <li>One complete, trusted resource</li>
-          <li>Confident in what your body is doing</li>
-          <li>Clear nutrition guidance from day one</li>
-          <li>Emotional tools to stay grounded</li>
+          <li>Confident in your body</li>
+          <li>Clear guidance from day one</li>
           <li>A structured path back to yourself</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="pb" style="margin-bottom:48px;">
-    <div class="gold-ornament">✦ ✦ ✦</div>
-    <p class="plbl">✦ Your Journey Deserves Full Support ✦</p>
-    <p class="ptitle">The Complete Pregnancy Wellness Bundle</p>
-    <p class="pold">Individual Value: ₦25,000</p>
-    <p class="pnew">₦4,950</p>
-    <p class="psaving">Bundle offer — save ₦20,050</p>
-    <p class="pnote">5 guides. 1 complete system. Everything you need — now.</p>
-    <a href="https://selar.com/7n576566i7" class="btn">Claim Your Bundle for ₦4,950 →</a>
-    <p class="csub">Support. Nourish. Thrive.</p>
+  <div style="text-align:center;margin:28px 0 40px;">
+    <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--muted);margin-bottom:16px;">You've been searching for the right resource. This is it.</p>
+    <a href="https://selar.com/7n576566i7" class="btn dk">Yes — I Want All 5 Guides →</a>
+    <p class="csub" style="margin-top:10px;">Support. Nourish. Thrive.</p>
   </div>
 
 </main>
@@ -346,15 +435,12 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
   var names=['Adaeze O.','Chioma N.','Blessing A.','Funmi K.','Ngozi E.','Amaka I.','Yetunde B.','Kemi F.','Nneka C.','Sola M.','Temi O.','Bisi A.','Chiamaka U.','Folake R.','Uche P.','Zainab M.','Halima I.','Fatima S.','Aisha B.','Grace E.','Toyin L.','Modupe A.','Adeola F.','Bukola T.','Shade O.'];
   var cities=['Lagos','Abuja','Port Harcourt','Ibadan','Kano','Benin City','Enugu','Owerri','Calabar','Warri','Onitsha','Kaduna','Jos','Abeokuta','Ilorin','Asaba','Uyo','Akure','Ado-Ekiti','Maiduguri'];
   var toast=document.getElementById('toast');
-  var toastName=document.getElementById('toast-name');
-  var toastCity=document.getElementById('toast-city');
   var busy=false;
   function show(){
     if(busy)return;
-    toastName.textContent=names[Math.floor(Math.random()*names.length)];
-    toastCity.textContent=cities[Math.floor(Math.random()*cities.length)];
-    busy=true;
-    toast.classList.add('show');
+    document.getElementById('toast-name').textContent=names[Math.floor(Math.random()*names.length)];
+    document.getElementById('toast-city').textContent=cities[Math.floor(Math.random()*cities.length)];
+    busy=true;toast.classList.add('show');
     setTimeout(function(){toast.classList.remove('show');setTimeout(function(){busy=false;},600);},4500);
   }
   setTimeout(function(){show();setInterval(function(){setTimeout(show,(25+Math.floor(Math.random()*30))*1000);},55000);},4000);
