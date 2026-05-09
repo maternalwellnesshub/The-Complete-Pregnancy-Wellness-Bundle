@@ -128,13 +128,6 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
 .mockup-caption p{color:rgba(255,255,255,.62);font-size:.72rem;line-height:1.4;}
 
 /* EARLY CTA */
-.early-cta{background:linear-gradient(135deg,var(--gp),#fff);border:1px solid rgba(184,146,42,.25);border-radius:10px;padding:22px 24px;text-align:center;margin:24px 0;}
-.early-cta .ec-lead{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);font-style:italic;margin-bottom:14px;line-height:1.55;}
-.early-cta .price-line{margin:0 0 14px;}
-.early-cta .price-line .old{font-size:.9rem;color:var(--muted);text-decoration:line-through;margin-right:8px;}
-.early-cta .price-line .new{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:900;}
-.early-cta .save-tag{display:inline-block;background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.28);color:#4a8a50;font-size:.72rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-bottom:14px;letter-spacing:.05em;}
-
 </style>
 </head>
 <body>
@@ -165,7 +158,7 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
   <div class="gdiv"><span>✦</span></div>
 
   <section class="hero">
-    <img src="images/hero.webp" alt="The Complete Pregnancy Wellness Bundle — Hero Image" loading="eager">
+    <img src="images/hero.webp" alt="The Complete Pregnancy Wellness Bundle — Hero Image" loading="eager" fetchpriority="high" width="1200" height="800" decoding="async">
   </section>
 
   <section class="prose">
@@ -197,6 +190,69 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     From the moment you start thinking about pregnancy to the days you're finding your way back to yourself after birth — this bundle puts <em>your</em> body, your hormones, your emotions, and your recovery at the centre. Because when <em>you</em> are well, everything else follows.
   </div>
 
+
+  <!-- ═══ BOOK CARDS ═══ -->
+  <div class="bi">
+    <strong>✦ Inside This Complete Package ✦</strong>
+    <p>5 focused guides covering your wellness before, during, and after pregnancy:</p>
+  </div>
+
+  <div class="bc">
+    <div class="bi2"><img src="images/book1.webp" alt="Boosting Fertility Naturally" loading="lazy" width="300" height="374"></div>
+    <div class="binfo">
+      <p class="bnum">Guide 01</p>
+      <h3 class="btitle">The Hidden Secrets to Boosting Fertility Naturally Before Pregnancy</h3>
+      <p class="bdesc">Hormone balance, nutrition timing, lifestyle adjustments, and the often-overlooked factors that make conception feel less like chance and more like preparation.</p>
+      <p class="bprice">Individual value: <strong>₦5,000</strong></p>
+      <div class="btags"><span>Hormone Balance</span><span>Pre-Conception</span><span>Natural Solutions</span></div>
+    </div>
+  </div>
+
+  <div class="bc">
+    <div class="bi2"><img src="images/book2.webp" alt="Pregnancy Body Changes" loading="lazy" width="300" height="374"></div>
+    <div class="binfo">
+      <p class="bnum">Guide 02</p>
+      <h3 class="btitle">How to Understand Your Pregnancy Body Changes Without Fear or Confusion</h3>
+      <p class="bdesc">Physical, hormonal, emotional changes — trimester by trimester — so every shift feels like information instead of a cause for panic. Know what's normal. Move through pregnancy with quiet confidence.</p>
+      <p class="bprice">Individual value: <strong>₦5,000</strong></p>
+      <div class="btags"><span>Body Awareness</span><span>Trimester Guide</span><span>Hormonal Support</span></div>
+    </div>
+  </div>
+
+  <div class="bc">
+    <div class="bi2"><img src="images/book3.webp" alt="Pregnancy Diet Guide" loading="lazy" width="300" height="374"></div>
+    <div class="binfo">
+      <p class="bnum">Guide 03</p>
+      <h3 class="btitle">The Simple Pregnancy Diet Guide: What to Eat to Feel Strong, Not Drained</h3>
+      <p class="bdesc">A clear, realistic framework for eating well during pregnancy. Fuel your body, support your baby's development, and combat fatigue through every trimester — without obsessing over every meal.</p>
+      <p class="bprice">Individual value: <strong>₦5,000</strong></p>
+      <div class="btags"><span>Nutrition</span><span>Combat Fatigue</span><span>Healthy Weight</span></div>
+    </div>
+  </div>
+
+  <div class="bc">
+    <div class="bi2"><img src="images/book4.webp" alt="Post-Pregnancy Belly Fat" loading="lazy" width="300" height="357"></div>
+    <div class="binfo">
+      <p class="bnum">Guide 04</p>
+      <h3 class="btitle">The Secret to Managing Post-Pregnancy Belly Fat Without Stress or Extreme Diets</h3>
+      <p class="bdesc">A gentle, science-backed approach to restoring core strength, improving posture, and supporting metabolism — without punishing diets or high-intensity pressure.</p>
+      <p class="bprice">Individual value: <strong>₦5,000</strong></p>
+      <div class="btags"><span>Core Strength</span><span>Natural Recovery</span><span>Metabolism</span></div>
+    </div>
+  </div>
+
+  <div class="bc">
+    <div class="bi2"><img src="images/book5.webp" alt="Pregnancy Mood Swings" loading="lazy" width="300" height="374"></div>
+    <div class="binfo">
+      <p class="bnum">Guide 05</p>
+      <h3 class="btitle">How to Calm Pregnancy Mood Swings Without Feeling Out of Control</h3>
+      <p class="bdesc">Understand the emotional patterns of pregnancy and postpartum, manage them with practical tools, and reclaim calm, clarity, and joy — even on the difficult days.</p>
+      <p class="bprice">Individual value: <strong>₦5,000</strong></p>
+      <div class="btags"><span>Emotional Wellness</span><span>Stress Reduction</span><span>Mental Clarity</span></div>
+    </div>
+  </div>
+
+  <div class="gdiv"><span>✦</span></div>
 
   <!-- ═══ WHAT YOU GET: MOCKUPS ═══ -->
   <div class="sh">
@@ -243,7 +299,7 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
   </div>
 
   <div class="bundle-img">
-    <img src="images/bundle.webp" alt="The Complete Pregnancy Wellness Bundle — Full View" loading="lazy">
+    <img src="images/bundle.webp" alt="The Complete Pregnancy Wellness Bundle — Full View" loading="lazy" width="1100" height="1100" decoding="async">
   </div>
 
   <div class="pb">
@@ -258,11 +314,11 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
       <li>How to Calm Pregnancy Mood Swings</li>
     </ul>
     <div class="value-breakdown">
-      <div class="vb-row"><span>Guide 1 — Fertility Naturally</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 2 — Body Changes</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 3 — Diet Guide</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 4 — Belly Fat</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>Guide 5 — Mood Swings</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>The Hidden Secrets to Boosting Fertility Naturally</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>How to Understand Your Pregnancy Body Changes</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>The Simple Pregnancy Diet Guide</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>The Secret to Managing Post-Pregnancy Belly Fat</span><span>₦5,000</span></div>
+      <div class="vb-row"><span>How to Calm Pregnancy Mood Swings</span><span>₦5,000</span></div>
       <div class="vb-row total"><span>Total Individual Value</span><span>₦25,000</span></div>
     </div>
     <p class="pold">Individual Total: ₦25,000</p>
