@@ -87,8 +87,11 @@ body{background:#fff;font-family:'Lato',sans-serif;color:var(--text);font-size:1
 .wg{list-style:none;margin:0 0 22px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto;}
 .wg li{display:flex;align-items:flex-start;gap:8px;color:#c8d8f0;font-size:.9rem;margin-bottom:8px;line-height:1.5;}
 .wg li::before{content:'✦';color:var(--gl);flex-shrink:0;font-size:.62rem;margin-top:4px;}
-.value-breakdown{background:rgba(255,255,255,.05);border:1px solid rgba(212,169,74,.2);border-radius:6px;padding:14px 18px;max-width:380px;margin:0 auto 20px;}
-.vb-row{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:#8899bb;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.value-breakdown{background:rgba(255,255,255,.06);border:1px solid rgba(212,169,74,.3);border-radius:8px;padding:16px 20px;max-width:440px;margin:0 auto 20px;}
+.vb-row{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;color:#fff;font-weight:700;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.vb-title{display:flex;align-items:center;gap:7px;text-align:left;line-height:1.4;}
+.vb-star{width:13px;height:13px;fill:var(--gl);flex-shrink:0;}
+.vb-price{color:var(--gl);font-weight:700;white-space:nowrap;margin-left:10px;}
 .vb-row.total{color:var(--gl);font-weight:700;font-size:.9rem;padding-top:8px;margin-top:4px;border-top:1px solid rgba(212,169,74,.3);border-bottom:none;}
 .pold{font-size:1rem;color:#6677aa;text-decoration:line-through;margin-bottom:4px;}
 .pnew{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,8vw,3.6rem);color:var(--gl);font-weight:900;line-height:1;margin-bottom:4px;}
@@ -306,19 +309,12 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     <div class="gold-ornament">✦ ✦ ✦</div>
     <p class="plbl">✦ Limited Bundle Offer ✦</p>
     <p class="ptitle">All 5 Pregnancy Wellness Guides<br>In One Complete Package</p>
-    <ul class="wg">
-      <li>The Hidden Secrets to Boosting Fertility Naturally</li>
-      <li>How to Understand Your Pregnancy Body Changes</li>
-      <li>The Simple Pregnancy Diet Guide</li>
-      <li>The Secret to Managing Post-Pregnancy Belly Fat</li>
-      <li>How to Calm Pregnancy Mood Swings</li>
-    </ul>
     <div class="value-breakdown">
-      <div class="vb-row"><span>The Hidden Secrets to Boosting Fertility Naturally</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>How to Understand Your Pregnancy Body Changes</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>The Simple Pregnancy Diet Guide</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>The Secret to Managing Post-Pregnancy Belly Fat</span><span>₦5,000</span></div>
-      <div class="vb-row"><span>How to Calm Pregnancy Mood Swings</span><span>₦5,000</span></div>
+      <div class="vb-row"><span class="vb-title"><svg class="vb-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>The Hidden Secrets to Boosting Fertility Naturally</span><span class="vb-price">₦5,000</span></div>
+      <div class="vb-row"><span class="vb-title"><svg class="vb-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>How to Understand Your Pregnancy Body Changes</span><span class="vb-price">₦5,000</span></div>
+      <div class="vb-row"><span class="vb-title"><svg class="vb-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>The Simple Pregnancy Diet Guide</span><span class="vb-price">₦5,000</span></div>
+      <div class="vb-row"><span class="vb-title"><svg class="vb-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>The Secret to Managing Post-Pregnancy Belly Fat</span><span class="vb-price">₦5,000</span></div>
+      <div class="vb-row"><span class="vb-title"><svg class="vb-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>How to Calm Pregnancy Mood Swings</span><span class="vb-price">₦5,000</span></div>
       <div class="vb-row total"><span>Total Individual Value</span><span>₦25,000</span></div>
     </div>
     <p class="pold">Individual Total: ₦25,000</p>
