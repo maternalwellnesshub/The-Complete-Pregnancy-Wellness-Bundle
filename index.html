@@ -2,6 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '983331407797482');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=983331407797482&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Complete Pregnancy Wellness Bundle | Maternal Wellness Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -394,6 +411,39 @@ footer{background:var(--navy);color:#4455aa;text-align:center;padding:20px;font-
     setTimeout(function(){toast.classList.remove('show');setTimeout(function(){busy=false;},600);},4500);
   }
   setTimeout(function(){show();setInterval(function(){setTimeout(show,(25+Math.floor(Math.random()*30))*1000);},55000);},4000);
+})();
+
+// ── Facebook Pixel: Scroll Depth Tracking ──
+(function(){
+  var scrollMilestones = {25:false, 50:false, 75:false, 90:false};
+  function getScrollPct(){
+    var el = document.documentElement;
+    var scrolled = el.scrollTop || document.body.scrollTop;
+    var total = el.scrollHeight - el.clientHeight;
+    return total > 0 ? Math.round((scrolled / total) * 100) : 0;
+  }
+  window.addEventListener('scroll', function(){
+    var pct = getScrollPct();
+    Object.keys(scrollMilestones).forEach(function(milestone){
+      if(!scrollMilestones[milestone] && pct >= parseInt(milestone)){
+        scrollMilestones[milestone] = true;
+        fbq('trackCustom', 'ScrollDepth', {depth: milestone + '%'});
+      }
+    });
+  }, {passive:true});
+})();
+
+// ── Facebook Pixel: Download / CTA Button Click Tracking ──
+(function(){
+  document.querySelectorAll('a.btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      fbq('track', 'Lead', {
+        content_name: 'Pregnancy Wellness Bundle',
+        content_category: 'Download CTA',
+        button_text: btn.textContent.trim()
+      });
+    });
+  });
 })();
 </script>
 </body>
